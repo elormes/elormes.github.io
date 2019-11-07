@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>GCC How-To Guides
+	<title>GCC HOWTOs
 </title>
 	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/css/main.css">
@@ -20,7 +20,45 @@
 	</div>
 
 	<div class="container">
-		
+		<h1>GCC How-to Guides</h1>
+<p>This is a collection of short guides on compiling C programs with GCC, the GNU Compiler Collection. In practice, GNU Make or CMake is used to simplify the build process so users don't have to type out multiple GCC commands. These guides teach which GCC commands to run and in what order. Knowledge of this makes it easier to write and understand makefiles.</p>
+<p>This guide covers:</p>
+<ul>
+<li><a href="#howto-compile-simple-c-program">How to compile a simple C program with GCC</a></li>
+</ul>
+<h3 id="howto-compile-simple-c-program">How to compile a simple C program with GCC</h3>
+<p>Given <code>hello.c</code> below:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// hello.c</span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>To compile it from the terminal, run</p>
+<div class="codehilite"><pre><span></span>$ gcc hello.c
+</pre></div>
+
+
+<p>A new file named "a.out" is created. Run <code>a.out</code> by prepending "a.out" with "./" like so:</p>
+<div class="codehilite"><pre><span></span>$ ./a.out 
+Hello world!
+</pre></div>
+
+
+<p>The default <code>a.out</code> is not a very descriptive name, and we would usually want to give the output file a more descriptive name, such as "hello" in this case . To do that, use <code>-o</code> to supply the output file name.</p>
+<div class="codehilite"><pre><span></span>$ gcc hello.c -o hello
+</pre></div>
+
+
+<p>Now, we can run <code>hello</code> like we run <code>a.out</code> by prepending "./" to "hello":</p>
+<div class="codehilite"><pre><span></span>$ ./hello
+Hello world!
+</pre></div>
 	</div>
 
 </body>
