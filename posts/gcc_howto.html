@@ -20,13 +20,14 @@
 	</div>
 
 	<div class="container">
-		<h1>GCC How-to Guides</h1>
-<p>This is a collection of short guides on compiling C programs with GCC, the GNU Compiler Collection. In practice, GNU Make or CMake is used to simplify the build process so users don't have to type out multiple GCC commands. These guides teach which GCC commands to run and in what order. Knowledge of this makes it easier to write and understand makefiles.</p>
+		<p><img alt="Crane" class="img-fluid img-small" src="/images/crane.png" /></p>
+<h1>GCC How-to Guides</h1>
+<p>This is a collection of short guides on compiling C programs with GCC, the GNU Compiler Collection. In practice, GNU Make or CMake is used to simplify the build process so users don't have to type out multiple GCC commands. These guides teach which GCC commands to run and in what order. This makes writing and understanding makefiles for C projects much easier later on.</p>
 <p>This guide covers:</p>
 <ul>
 <li><a href="#howto-compile-simple-c-program">How to compile a simple C program with GCC</a></li>
 </ul>
-<h3 id="howto-compile-simple-c-program">How to compile a simple C program with GCC</h3>
+<h2 id="howto-compile-simple-c-program">How to compile a simple C program with GCC</h2>
 <p>Given <code>hello.c</code> below:</p>
 <div class="codehilite"><pre><span></span><span class="c1">// hello.c</span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
@@ -44,13 +45,13 @@
 </pre></div>
 
 
-<p>A new file named "a.out" is created. Run <code>a.out</code> by prepending "a.out" with "./" like so:</p>
+<p>A new file named "a.out" is created. To run <code>a.out</code>, prepend "./" to "a.out" like so:</p>
 <div class="codehilite"><pre><span></span>$ ./a.out 
 Hello world!
 </pre></div>
 
 
-<p>The default <code>a.out</code> is not a very descriptive name, and we would usually want to give the output file a more descriptive name, such as "hello" in this case . To do that, use <code>-o</code> to supply the output file name.</p>
+<p>The default "a.out" is not a very descriptive name, and we would usually want to give the output file a more descriptive name, such as "hello" in this case . To do that, use <code>-o</code> to supply the output file name.</p>
 <div class="codehilite"><pre><span></span>$ gcc hello.c -o hello
 </pre></div>
 
