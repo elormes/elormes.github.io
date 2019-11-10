@@ -73,6 +73,12 @@ a:visited { color: blue; }
 	max-width: 300px;
 }
 
+.codehilite {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-radius: 6px;
+}
+
 /* Larger than phablet */
 @media (min-width: 550px) {
   h1 { font-size: 4.8rem; }
